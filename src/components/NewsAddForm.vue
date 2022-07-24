@@ -27,8 +27,9 @@
             <b-button squared type="submit">Submit</b-button>
            
             <div class="form-footer-reset">
-                <b-link event="reset"><b-icon icon="arrow-clockwise" font-scale="2"></b-icon></b-link>
-                <b-button squared type="reset" variant="success">Reset</b-button>
+                <b-button type="reset" variant="link" class="button-edit">
+                    <b-icon icon="arrow-clockwise" color="grey" font-scale="2"></b-icon>
+                </b-button>
             </div>
         </div>
     </b-form>

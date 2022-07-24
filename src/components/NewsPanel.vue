@@ -2,11 +2,11 @@
   <div class="news-panel">
     <div class="news-panel-header">
       <!-- CREATE NEWS -->
-      <b-button v-b-modal.modal-1 squared>CREATE NEWS</b-button>
-      <b-modal id="modal-1" hide-footer hide-header title="Create News">
+      <b-button @click="show=true" squared>CREATE NEWS</b-button>
+      <b-modal v-model="show" hide-footer hide-header title="Create News">
         <div class="form-header">
           <h4>Create News</h4>
-          <b-button pill variant="primary" font-scale="1.2">X</b-button>
+          <b-button @click="show=false" type="button" class="btn-close" aria-label="Close"></b-button>
         </div>
         <NewsAddForm />
       </b-modal>
@@ -25,6 +25,11 @@ import {mapGetters} from 'vuex'
 
 export default {
   name: 'NewsPanel',
+  data(){
+    return {
+      show: false
+    }
+  },  
   computed: mapGetters(['allNews']),
   components: {
     News,

@@ -14,12 +14,18 @@
             <div class="news-footer">
                 <div class="news-footer-likes">
                     <span>{{likes}}</span>
-                    <b-link class="button-edit"><b-icon icon="suit-heart-fill" font-scale="1.2"></b-icon></b-link>
+                    <b-button type="button" variant="link" class="button-edit">
+                        <b-icon icon="suit-heart-fill" font-scale="1.2"></b-icon>
+                    </b-button>
                 </div>
                 
                 <div class="news-footer-edit">
-                    <b-link class="button-edit"><b-icon icon="pencil-fill" color="blue" font-scale="1.2"></b-icon></b-link>
-                    <b-link class="button-edit"><b-icon icon="trash" color="red" font-scale="1.2"></b-icon></b-link>
+                    <b-button type="button" variant="link" class="button-edit">
+                        <b-icon icon="pencil-fill" color="blue" font-scale="1.2"></b-icon>
+                    </b-button>
+                    <b-button type="button" variant="link" class="button-edit">
+                        <b-icon icon="trash" color="red" font-scale="1.2"></b-icon>
+                    </b-button>
                 </div>
             </div>
         </b-card>
