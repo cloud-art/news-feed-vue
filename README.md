@@ -1,3 +1,7 @@
+## View demo
+```
+https://cloud-art.github.io/news-feed-vue/
+```
 ## Project setup
 ```
 npm install
