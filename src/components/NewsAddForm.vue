@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit="onSubmit" @reset="onReset">
         <b-form-group id="input-group-1" label="Title:" label-for="input-1">
             <b-form-input
                 id="input-title"
@@ -18,11 +18,11 @@
             ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
-            <b-form-checkbox-group v-model="form.checked" id="checkboxes-3" :aria-describedby="ariaDescribedby">
+        <!-- <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
+            <b-form-checkbox-group v-model="instantly" id="checkboxes-3" :aria-describedby="ariaDescribedby">
                 <b-form-checkbox class="pt-4"  value='true'>&nbsp;post instantly</b-form-checkbox>
             </b-form-checkbox-group>
-        </b-form-group>
+        </b-form-group> -->
         <div class="form-footer">
             <!-- <b-button squared>Close</b-button> -->
             <div></div>
@@ -52,9 +52,8 @@ export default {
                 author: 'test',
                 text: '',
                 likes: '0',
-                checked: false
-            },
-            show: true
+                // instantly: false
+            }
         }
     },
     methods: {
@@ -68,19 +67,13 @@ export default {
                 author: this.form.author,
                 text: this.form.text,
                 likes: this.form.likes,
-                checked: this.form.checked
+                // instantly: this.form.instantly
             })
         },
         onReset(event) {
             event.preventDefault()
             this.form.title = ''
             this.form.text = ''
-            this.form.checked = false
-            // Trick to reset/clear native browser form validation state
-            this.show = false
-            this.$nextTick(() => {
-                this.show = true
-            })
         }
     }
 }

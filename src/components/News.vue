@@ -61,7 +61,7 @@ export default {
     NewsEditForm
 },
   props: {
-    id: String,
+    id: Number,
     title: String,
     date: String,
     author: String,

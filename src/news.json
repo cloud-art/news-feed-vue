@@ -1,7 +1,7 @@
 {
     "news": [
         {
-            "id": "1",
+            "id": 1,
             "title": "'Spider-Man: No Way Home' finds the sweet spot in Marvel's multiverse",
             "date": "12/22/2021 03:59 pm",
             "author": "TestStaff",
@@ -9,7 +9,7 @@
             "likes": "5"
         },
         {
-            "id": "2",
+            "id": 2,
             "title": "'West Side Story' reimagines the original in Steven Spielberg's vibrant showcase for its start",
             "date": "12/22/2021 04:04 pm",
             "author": "TestStaff",
@@ -17,7 +17,7 @@
             "likes": "3"
         },
         {
-            "id": "3",
+            "id": 3,
             "title": "Canada surges to 4-2 win over US in Olympic women's hockey",
             "date": "02/08/2022 04:00 pm",
             "author": "TestStaff",

@@ -21,7 +21,7 @@ export default {
             })
         },
         editItem(state, editedItem){
-            console.log(`store: `, editedItem)
+            // console.log(`store: `, editedItem)
             state.news.forEach((el) => {
                 if (el.id == editedItem.id){
                     el.title = editedItem.title

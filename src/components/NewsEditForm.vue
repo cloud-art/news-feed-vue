@@ -18,11 +18,11 @@
             ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
-            <b-form-checkbox-group v-model="form.checked" id="checkboxes-3" :aria-describedby="ariaDescribedby">
+        <!-- <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
+            <b-form-checkbox-group v-model="form.instantly" id="checkboxes-3" :aria-describedby="ariaDescribedby">
                 <b-form-checkbox class="pt-4"  value='true'>&nbsp;post instantly</b-form-checkbox>
             </b-form-checkbox-group>
-        </b-form-group>
+        </b-form-group> -->
         <div class="form-footer">
             <!-- <b-button squared>Close</b-button> -->
             <div></div>
@@ -44,7 +44,7 @@ import { mapMutations } from "vuex";
 export default {
     name: 'NewsAddForm',
     props: {
-        id: String,
+        id: Number,
         title: String,
         date: String,
         author: String,
@@ -60,7 +60,7 @@ export default {
                 author: this.author,
                 text: this.text,
                 likes: this.likes,
-                checked: false
+                // instantly: false
             }
         }
     },
@@ -68,23 +68,23 @@ export default {
         ...mapMutations(["editItem"]),
         onSubmit(event) {
             event.preventDefault()
-            console.log(
-                `form: `,
-                this.form.id,
-                this.form.title,
-                this.form.date,
-                this.form.author,
-                this.form.text,
-                this.form.ckecked,
-                this.form.likes
-            )
+            // console.log(
+            //     `form: `,
+            //     this.form.id,
+            //     this.form.title,
+            //     this.form.date,
+            //     this.form.author,
+            //     this.form.text,
+            //     this.form.instantly,
+            //     this.form.likes
+            // )
             this.editItem({
                 id: this.form.id,
                 title: this.form.title,
                 date: this.form.date,
                 author: this.form.author,
                 text: this.form.text,
-                checked: this.form.ckecked,
+                // instantly: this.form.instantly,
                 likes: this.form.likes
             })
         },
@@ -92,7 +92,7 @@ export default {
             event.preventDefault()
             this.form.title = ''
             this.form.text = ''
-            this.form.checked = false
+            this.form.instantly = false
         }
     }
 }
