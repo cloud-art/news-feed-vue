@@ -4,7 +4,6 @@ export default {
             const res = import("../news.json")
             res.then(response => {
                 const news = response.news
-                console.log(news)
                 context.commit('updateNews', news)
             })
           }
@@ -17,8 +16,18 @@ export default {
             state.news.unshift(newItem)
         },
         deleteItem(state, id){
-            let index = state.news.indexOf(id)
-            state.news.slice(index, 1)
+            state.news.forEach((el, i) => {
+                if (el.id == id) state.news.splice(i, 1)
+            })
+        },
+        editItem(state, editedItem){
+            console.log(`store: `, editedItem)
+            state.news.forEach((el) => {
+                if (el.id == editedItem.id){
+                    el.title = editedItem.title
+                    el.text = editedItem.title
+                }
+            })
         }
     },
     state: {

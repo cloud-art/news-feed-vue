@@ -12,7 +12,7 @@
       </b-modal>
     </div>
     <div class="news-panel-body" v-for="item in allNews" :key="item.id">
-      <News :title="item.title" :date="item.date" :author="item.author" :text="item.text" :likes="item.likes"/>
+      <News :id="item.id" :title="item.title" :date="item.date" :author="item.author" :text="item.text" :likes="item.likes"/>
     </div>
 
   </div>

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit="onSubmit" @reset="onReset">
         <b-form-group id="input-group-1" label="Title:" label-for="input-1">
             <b-form-input
                 id="input-title"
@@ -40,35 +40,52 @@
 
 <script>
 import { mapMutations } from "vuex";
-import moment from "moment"
 
 export default {
     name: 'NewsAddForm',
-
-    data() {
+    props: {
+        id: String,
+        title: String,
+        date: String,
+        author: String,
+        text: String,
+        likes: String
+    },
+    data(){
         return {
-            form: {
-                title: '',
-                author: 'test',
-                text: '',
-                likes: '0',
+            form:{
+                id: this.id,
+                title: this.title,
+                date: this.date,
+                author: this.author,
+                text: this.text,
+                likes: this.likes,
                 checked: false
-            },
-            show: true
+            }
         }
     },
     methods: {
-        ...mapMutations(["addItem"]),
+        ...mapMutations(["editItem"]),
         onSubmit(event) {
             event.preventDefault()
-            this.addItem({
-                id: Date.now(),
+            console.log(
+                `form: `,
+                this.form.id,
+                this.form.title,
+                this.form.date,
+                this.form.author,
+                this.form.text,
+                this.form.ckecked,
+                this.form.likes
+            )
+            this.editItem({
+                id: this.form.id,
                 title: this.form.title,
-                date: moment().format('DD/MM/YYYY h:mm a'),
+                date: this.form.date,
                 author: this.form.author,
                 text: this.form.text,
-                likes: this.form.likes,
-                checked: this.form.checked
+                checked: this.form.ckecked,
+                likes: this.form.likes
             })
         },
         onReset(event) {
@@ -76,11 +93,6 @@ export default {
             this.form.title = ''
             this.form.text = ''
             this.form.checked = false
-            // Trick to reset/clear native browser form validation state
-            this.show = false
-            this.$nextTick(() => {
-                this.show = true
-            })
         }
     }
 }
