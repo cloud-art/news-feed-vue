@@ -1,5 +1,3 @@
-# test-task-inntech-vue2
-
 ## Project setup
 ```
 npm install
