@@ -25,7 +25,7 @@ export default {
             state.news.forEach((el) => {
                 if (el.id == editedItem.id){
                     el.title = editedItem.title
-                    el.text = editedItem.title
+                    el.text = editedItem.text
                 }
             })
         }
