@@ -38,6 +38,7 @@
 
 <script>
 import { mapMutations } from "vuex";
+import moment from "moment"
 
 export default {
     name: 'NewsAddForm',
@@ -47,7 +48,6 @@ export default {
         return {
             form: {
                 title: '',
-                date: '12/22/2021 03:59 pm',
                 author: 'test',
                 text: '',
                 likes: '0',
@@ -62,7 +62,7 @@ export default {
             event.preventDefault()
             this.addItem({
                 title: this.form.title,
-                date: this.form.date,
+                date: moment().format('DD/MM/YYYY h:mm a'),
                 author: this.form.author,
                 text: this.form.text,
                 likes: this.form.likes,

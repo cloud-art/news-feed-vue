@@ -15,7 +15,7 @@
                 <div class="news-footer-likes">
                     <span>{{likes}}</span>
                     <b-button type="button" variant="link" class="button-edit">
-                        <b-icon icon="suit-heart-fill" font-scale="1.2"></b-icon>
+                        <b-icon icon="suit-heart-fill" class="designed-color" font-scale="1.2"></b-icon>
                     </b-button>
                 </div>
                 
