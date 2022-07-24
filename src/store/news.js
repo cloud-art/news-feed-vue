@@ -13,6 +13,7 @@ export default {
             state.news = news
         },
         addItem(state, newItem){
+            // console.log(newItem)
             state.news.unshift(newItem)
         },
         deleteItem(state, id){

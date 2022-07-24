@@ -18,13 +18,17 @@
             ></b-form-input>
         </b-form-group>
 
-        <!-- <b-form-group id="input-group-3" v-slot="{ ariaDescribedby }">
-            <b-form-checkbox-group v-model="instantly" id="checkboxes-3" :aria-describedby="ariaDescribedby">
-                <b-form-checkbox class="pt-4"  value='true'>&nbsp;post instantly</b-form-checkbox>
-            </b-form-checkbox-group>
-        </b-form-group> -->
+        <b-form-checkbox
+            id="checkbox-1"
+            v-model="form.instantly"
+            name="checkbox-1"
+            value="true"
+            unchecked-value="false"
+        >
+        &nbsp;post instantly
+        </b-form-checkbox>
+
         <div class="form-footer">
-            <!-- <b-button squared>Close</b-button> -->
             <div></div>
            
             <div class="form-footer-reset">
@@ -52,14 +56,15 @@ export default {
                 author: 'test',
                 text: '',
                 likes: '0',
-                // instantly: false
-            }
+            },
+            instantly: false
         }
     },
     methods: {
         ...mapMutations(["addItem"]),
         onSubmit(event) {
             event.preventDefault()
+
             this.addItem({
                 id: Date.now(),
                 title: this.form.title,
@@ -67,7 +72,6 @@ export default {
                 author: this.form.author,
                 text: this.form.text,
                 likes: this.form.likes,
-                // instantly: this.form.instantly
             })
         },
         onReset(event) {
